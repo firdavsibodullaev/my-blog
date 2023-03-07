@@ -12,7 +12,15 @@
     <div class="w-100 d-flex justify-content-center align-items-center" style="height: 100vh">
         <div class="p-5 w-75">
             <h4 class="mb-3 text-center">Авторизация</h4>
-            <form action="" method="post">
+            <?php if(isset($_SESSION['error_message'])): ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $_SESSION['error_message'] ?>
+            <?php unset($_SESSION['error_message']) ?>
+            </div>
+
+            <?php endif ?>
+
+            <form action="/login.php" method="post">
                 <div class="mb-3">
                     <label for="login" class="form-label">Логин</label>
                     <input type="text" name="login" class="form-control" id="login" placeholder="Введите логин">

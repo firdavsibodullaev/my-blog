@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . "/config/helpers.php";
 session_start();
 
 if(isset($_SESSION['user'])) {

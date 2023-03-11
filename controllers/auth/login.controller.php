@@ -12,12 +12,13 @@ $result = $db->query($sql);
 if ($result->num_rows < 1) {
     $_SESSION['error_message'] = "Неправильный логин или пароль";
     header('Location: /login.php');
-    exit(1);
+    exit();
 }
+
 $user = $result->fetch_assoc();
 $result->close();
 $db->close();
 
 $_SESSION['user'] = $user;
 
-header("Location: /admin/index.php");
+header("Location: /admin");

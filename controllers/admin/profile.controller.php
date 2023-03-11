@@ -12,10 +12,29 @@ if ($_FILES['avatar']['error'] == 0) {
     $from = $_FILES['avatar']['tmp_name'];
     $to = "/assets/uploads/users/" . time() . $_FILES['avatar']['name'];
     $uploaded_file = move_uploaded_file($from, __DIR__ . "/../.." . $to);
-    $avatar = $to;
+
+    if ($uploaded_file) {
+        unlink(__DIR__ . "/../.." . $avatar);
+        $avatar = $to;
+    }
 }
 
-$sql = "UPDATE `users` SET `last_name` = '$last_name', `first_name` = '$first_name', `login` = '$login', `password` = '$password', `avatar` = '$avatar' WHERE `id` = '". $_SESSION['user']['id'] ."'";
+$sql = "UPDATE `users` SET 
+`last_name` = '$last_name', 
+`first_name` = '$first_name', 
+`login` = '$login', 
+`password` = '$password', 
+`avatar` = '$avatar' 
+WHERE `id` = '". auth_user()['id'] ."'";
+
 $db->query($sql);
+
+$sql = "SELECT * FROM `users` WHERE `id` = '". auth_user()['id'] ."'";
+
+$result = $db->query($sql);
+$_SESSION['user'] = $result->fetch_assoc();
+
+$result->close();
+$db->close();
 
 header("Location: /admin/profile.php");

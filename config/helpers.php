@@ -23,3 +23,12 @@ function dump($variable) {
     echo "</pre>";
     exit();
 }
+
+function auth_user() {
+
+    if( isset($_SESSION['user']) ) {
+        return $_SESSION['user'];
+    }
+
+    return false;
+}

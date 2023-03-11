@@ -27,12 +27,12 @@
                     </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center py-2">
-                    <div class="">
-                        <img src="<?= $_SESSION['user']['avatar'] ?>" width="40" alt="">
+                    <div class="me-2">
+                        <img src="<?= auth_user()['avatar'] ?>" width="40" alt="">
                     </div>
                     <div class="">
-                        <?= $_SESSION['user']['last_name'] ?>
-                        <?= $_SESSION['user']['first_name'] ?>
+                        <?= auth_user()['last_name'] ?>
+                        <?= auth_user()['first_name'] ?>
                     </div>
                 </div>
             </div>

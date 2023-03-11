@@ -4,7 +4,7 @@ require __DIR__ . "/../config/helpers.php";
 
 session_start();
 
-if (! isset($_SESSION['user']) ) {
+if (! auth_user() ) {
     header('Location: /login.php');
     exit();
 }

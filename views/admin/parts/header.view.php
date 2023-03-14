@@ -17,7 +17,7 @@
                         <a class="nav-link <?= is_url("/admin") ?>" href="/admin">Главная страница</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= is_url("/admin/news") ?>" href="/admin/news">Новости</a>
+                        <a class="nav-link <?= is_url("/admin/news.php") ?>" href="/admin/news.php">Новости</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= is_url("/admin/profile.php") ?>" href="/admin/profile.php">Профиль</a>

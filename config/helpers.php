@@ -32,3 +32,7 @@ function auth_user() {
 
     return false;
 }
+
+function is_method($method) {
+    return $_SERVER["REQUEST_METHOD"] == strtoupper($method);
+}

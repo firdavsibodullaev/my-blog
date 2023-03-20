@@ -5,7 +5,18 @@ require __DIR__ . "/../config/db.php";
 
 session_start();
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM `news` WHERE `id` = '$id'";
+if(is_method('post')) {
 
-dump($sql);
+    require __DIR__ . "/../controllers/admin/news_update.controller.php";
+
+} elseif (is_method('get')) {
+
+    require __DIR__ . "/../controllers/admin/news_edit.controller.php";
+
+}
+
+
+// bazadan yangilikni olamiz
+// formaga quyamiz
+// formada o'zgarishlar qilamiz
+// bazaga qaytadan yozib quyamiz

@@ -4,6 +4,7 @@
             <a href="/admin/news-create.php" class="btn btn-primary">Создать новость</a>
         </div>
         <div class="mt-5">
+            <?= show_message() ?>
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
@@ -26,6 +27,7 @@
                             <td><?= $news['publish_date'] ?></td>
                             <td><?= $news['user_id'] ?></td>
                             <td>
+                                <a href="/admin/news-show.php?id=<?= $news['id'] ?>" class="btn btn-info">Смотреть</a>
                                 <a href="/admin/news-edit.php?id=<?= $news['id'] ?>" class="btn btn-warning">Изменить</a>
                                 <a href="" class="btn btn-danger">Удалить</a>
                             </td>

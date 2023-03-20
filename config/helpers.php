@@ -36,3 +36,14 @@ function auth_user() {
 function is_method($method) {
     return $_SERVER["REQUEST_METHOD"] == strtoupper($method);
 }
+
+function show_message() {
+    if (isset($_SESSION['message'])) {
+        echo "<div class=\"alert alert-success\" role=\"alert\">";
+        echo $_SESSION['message'];
+        echo "</div>";
+
+        unset($_SESSION['message']);
+        
+    }
+}

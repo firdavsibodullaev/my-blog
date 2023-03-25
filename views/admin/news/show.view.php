@@ -11,7 +11,7 @@
                 <strong>Дата публикации:</strong> <?= date_create($post['publish_date'])->format('d.M.Y') ?>
             </div>
             <div>
-                <strong>Автор:</strong> <?= $post['user_id'] ?>
+                <strong>Автор:</strong> <?= $post['last_name'] ?> <?= $post['first_name'] ?>
             </div>
         </div> 
     </div>

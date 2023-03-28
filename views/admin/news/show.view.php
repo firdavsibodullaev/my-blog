@@ -5,6 +5,15 @@
         <img src="<?= $post['banner'] ?>" style="width:60%" alt="Banner">
     </div>
     <div>
+        <a href="/admin/news-like.php" class="text-success me-1">
+            <i class="fa-solid fa-thumbs-up"></i> | <?= $post['like'] ?? 0 ?>
+        </a>
+
+        <a href="/admin/news-dislike.php" class="text-danger ms-1">
+        <?= $post['dislike'] ?? 0 ?> | <i class="fa-solid fa-thumbs-down"></i>
+        </a>
+    </div>
+    <div>
         <p class="text-justify"><?= $post['body'] ?></p>
         <div class="d-flex justify-content-between">
             <div>

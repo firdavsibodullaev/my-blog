@@ -4,11 +4,16 @@
 $id = $_GET['id'];
 
 
-$sql = "SELECT `news`.*,
+$sql = "SELECT `news`.*, 
+COUNT(`likes`.`like`) AS `like`,
+COUNT(`likes`.`dislike`) AS `dislike`,
 `users`.first_name,
-`users`.last_name FROM `news` 
+`users`.last_name 
+FROM `news`
 INNER JOIN `users` ON `news`.user_id = `users`.id
-WHERE `news`.id = '$id'";
+LEFT JOIN `likes` ON `news`.id = `likes`.post_id
+WHERE `news`.id = '$id'
+GROUP BY `news`.id";
 
 $result = $db->query($sql);
 

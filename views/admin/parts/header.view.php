@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome/css/all.css">
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/font-awesome/js/all.js"></script>
 </head>
 <body>
     <div class="relative" style="min-height:100%">

@@ -21,4 +21,11 @@ $post = $result->fetch_assoc();
 
 $count = $post['view_count'];
 
+// $comment_sql = "SELECT * FROM `comments` WHERE `post_id` = " . $post['id'];
+// $result = $db->query($comment_sql);
+
+// $comments = $result->fetch_all(MYSQLI_ASSOC);
+
+
+
 require __DIR__ .'/../../views/admin/news/show.view.php';

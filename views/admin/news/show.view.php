@@ -1,15 +1,16 @@
 <?php require __DIR__ . "/../parts/header.view.php" ?>
 <section class="container mt-5">
+    <?= show_errors() ?>
     <h4 class="text-center"><?= $post['title'] ?></h4>
     <div class="d-flex justify-content-center my-5">
         <img src="<?= $post['banner'] ?>" style="width:60%" alt="Banner">
     </div>
     <div>
-        <a href="/admin/news-like.php" class="text-success me-1">
+        <a href="/admin/news-like.php?id=<?= $post['id'] ?>" class="text-success me-1">
             <i class="fa-solid fa-thumbs-up"></i> | <?= $post['like'] ?? 0 ?>
         </a>
 
-        <a href="/admin/news-dislike.php" class="text-danger ms-1">
+        <a href="/admin/news-dislike.php?id=<?= $post['id'] ?>" class="text-danger ms-1">
         <?= $post['dislike'] ?? 0 ?> | <i class="fa-solid fa-thumbs-down"></i>
         </a>
     </div>

@@ -5,7 +5,7 @@ require __DIR__ . "/../../config/db.php";
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $login = $_POST['login'];
-$password = md5($_POST['password']);
+$password = md5(md5($_POST['password']));
 
 
 $check_sql = "SELECT id from `users` where `login` = '$login'";

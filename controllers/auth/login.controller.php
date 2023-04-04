@@ -3,7 +3,7 @@
 require __DIR__ . "/../../config/db.php";
 
 $login = $_POST['login'];
-$password = md5($_POST['password']);
+$password = md5(md5($_POST['password']));
 
 $sql = "SELECT * from `users` where `login` = '$login' AND `password` = '$password'";
 

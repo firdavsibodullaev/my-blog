@@ -25,5 +25,33 @@
             </div>
         </div> 
     </div>
+    <div class="mt-5">
+        <form action="/admin/add-comment.php" method="post">
+            <input type="hidden" name="post_id" value="<?=$post['id']?>">
+            <div class="mb-3">
+                <textarea name="comment" 
+                            class="form-control"
+                            rows="2" 
+                            id="comment"
+                            placeholder="Комментарий"></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Сохранить">
+        </form>
+        <div class="mt-5">
+            <p>Комментарии:</p>
+            <?php foreach($comments as $comment): ?>
+                <div class="mb-3">
+                    <p class="position-relative pb-4">
+                        <?= $comment['text'] ?>
+                        <span   class="text-body-secondary position-absolute bottom-0 start-0"
+                                style="font-size: 14px;">
+                            <?= $comment['date'] ?>  |
+                            <?= $comment['last_name'] ?> <?= $comment['first_name'] ?>
+                        </span>
+                    </p>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
 </section>
 <?php require __DIR__ . "/../parts/footer.view.php" ?>

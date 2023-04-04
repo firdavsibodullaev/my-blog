@@ -21,6 +21,9 @@
         </div>
         <div class="mt-5">
             <?= show_message() ?>
+            <?php if(isset($_GET['query'])): ?>
+                Результаты по запросу: <?= htmlspecialchars($_GET['query']) ?>
+            <?php endif ?>
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
